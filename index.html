@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>俞洋洋｜Personal OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="loader" id="loader" aria-label="Loading personal system">
+      <div class="scanline"></div>
+      <div class="loader-panel">
+        <p>PERSONAL OS / BOOT</p>
+        <h1>LOADING PERSONAL SYSTEM...</h1>
+        <div class="loader-status" id="loaderStatus">Initializing modules...</div>
+        <div class="progress-track"><span id="loaderBar"></span></div>
+        <strong id="loaderPercent">0%</strong>
+      </div>
+    </section>
+
+    <main class="site" id="site">
+      <section class="hero-scroll" id="heroScroll">
+        <div class="hero-sticky">
+          <div class="tech-bg" id="techBg"></div>
+          <div class="noise"></div>
+          <div class="scanline"></div>
+
+          <div class="gear-layer" aria-hidden="true">
+            <div class="gear gear-xl gear-a"></div>
+            <div class="gear gear-md gear-b"></div>
+            <div class="gear gear-sm gear-c"></div>
+            <div class="gear gear-lg gear-d"></div>
+          </div>
+
+          <aside class="hero-title" id="heroTitle">
+            <p>CODE / DESIGN / THINKING</p>
+            <h2>CREATION<br /><span>创造</span></h2>
+          </aside>
+
+          <section class="character-wrap" aria-label="Character reveal">
+            <div class="character-card" id="characterCard">
+              <img class="character-face character-front" src="./assets/me-front.png" alt="个人漫画形象正面" />
+              <img class="character-face character-back" src="./assets/me-back.png" alt="个人漫画形象背面" />
+            </div>
+            <div class="character-glow"></div>
+          </section>
+
+          <div class="scroll-hud">
+            <div class="hud-row"><span>SCROLL PROGRESS</span><span id="scrollPercent">0%</span></div>
+            <div class="hud-track"><span id="scrollBar"></span></div>
+          </div>
+
+          <section class="hero-copy" id="heroCopy">
+            <p>IDENTITY RESOLUTION COMPLETE</p>
+            <h1>WELCOME TO PERSONAL OS</h1>
+            <span>欢迎进入我的个人系统</span>
+          </section>
+        </div>
+      </section>
+
+      <section class="modules" id="modules">
+        <div class="section-heading">
+          <p>MODULE DIRECTORY</p>
+          <h2>System Modules</h2>
+        </div>
+
+        <div class="module-grid">
+          <button class="module-card" data-module="AI篇" type="button">
+            <span>01</span><h3>AI篇</h3><p>模型应用、智能工作流、AI 产品实践与自动化探索。</p>
+          </button>
+          <button class="module-card" data-module="技术文档" type="button">
+            <span>02</span><h3>技术文档</h3><p>开发拆解、项目复盘、系统设计和工程学习笔记。</p>
+          </button>
+          <button class="module-card" data-module="生活篇" type="button">
+            <span>03</span><h3>生活篇</h3><p>观察、摄影、审美积累和个人成长记录。</p>
+          </button>
+          <button class="module-card" data-module="职场篇" type="button">
+            <span>04</span><h3>职场篇</h3><p>职业经历、协作方法、作品案例与求职信息。</p>
+          </button>
+        </div>
+      </section>
+
+      <section class="ai-intro-scroll" id="aiIntro">
+        <div class="ai-intro-sticky">
+          <div class="ai-grid-bg"></div>
+          <div class="ai-fine-lines" aria-hidden="true"></div>
+          <div class="ai-cyan-mark ai-cyan-mark-a" aria-hidden="true"></div>
+          <div class="ai-cyan-mark ai-cyan-mark-b" aria-hidden="true"></div>
+          <div class="ai-intro-copy" id="aiIntroCopy">
+            <p>Vibe coding</p>
+            <h2>用 AI 把真实工作问题，变成可运行的产品原型</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail" id="detail">
+        <button class="detail-close" id="detailClose" type="button">CLOSE</button>
+        <p>DETAIL PLACEHOLDER</p>
+        <h2 id="detailTitle">选择模块</h2>
+        <span id="detailText">点击上方卡片后，这里会作为后续详情页面扩展入口。</span>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
