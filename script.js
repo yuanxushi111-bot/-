@@ -1,4 +1,8 @@
-gsap.registerPlugin(ScrollTrigger)
+const hasGsap = Boolean(window.gsap && window.ScrollTrigger)
+
+if (hasGsap) {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual'
@@ -14,7 +18,7 @@ const heroCopy = document.querySelector('#heroCopy')
 const techBg = document.querySelector('#techBg')
 const scrollBar = document.querySelector('#scrollBar')
 const scrollPercent = document.querySelector('#scrollPercent')
-const gears = gsap.utils.toArray('.gear')
+const gears = Array.from(document.querySelectorAll('.gear'))
 const moduleCards = document.querySelectorAll('.module-card')
 const detailTitle = document.querySelector('#detailTitle')
 const detailText = document.querySelector('#detailText')
@@ -68,7 +72,9 @@ function runLoader() {
       resetScrollPosition()
       loader.classList.add('is-hidden')
       document.body.style.overflow = 'auto'
-      ScrollTrigger.refresh(true)
+      if (hasGsap) {
+        ScrollTrigger.refresh(true)
+      }
     }, 450)
   }
 
@@ -76,6 +82,13 @@ function runLoader() {
 }
 
 function initHeroAnimation() {
+  if (!hasGsap) {
+    characterCard.style.opacity = '1'
+    characterCard.style.transform = 'rotateY(180deg) scale(0.9)'
+    characterCard.style.filter = 'brightness(0.72) blur(4px)'
+    return
+  }
+
   gsap.set(characterCard, {
     rotationY: 180,
     scale: 0.9,
@@ -126,6 +139,12 @@ function initHeroAnimation() {
 }
 
 function initAiIntroAnimation() {
+  if (!hasGsap) {
+    aiIntroCopy.style.opacity = '0'
+    aiIntroCopy.style.transform = 'translateY(36px)'
+    return
+  }
+
   gsap.set(aiIntroCopy, { opacity: 0, y: 36 })
 
   gsap.timeline({
