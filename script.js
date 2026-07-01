@@ -39,7 +39,6 @@ const moduleDetails = {
   生活篇: '这里会扩展生活观察、审美积累、摄影记录和个人成长笔记。',
   职场篇: '这里会扩展职业经历、协作案例、简历信息和作品展示。',
 }
-
 function resetScrollPosition() {
   const originalScrollBehavior = document.documentElement.style.scrollBehavior
 
